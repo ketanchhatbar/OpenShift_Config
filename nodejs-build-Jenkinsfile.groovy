@@ -1,4 +1,5 @@
-def deploymentMap = null 
+import groovy.json.JsonSlurper
+def deploymentMap = null
 node {
 
     deploymentMap = readJSON text: params.deploymentMap
