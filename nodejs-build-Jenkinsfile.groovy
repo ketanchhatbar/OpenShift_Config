@@ -1,7 +1,7 @@
 def deploymentMap = null
 node {
 
-	deploymentMap = readJSON file: ${WORKSPACE}/params.deploymentMap
+	deploymentMap = readJSON file: env.WORKSPACE/params.deploymentMap
     echo '\u27A1 deploymentMap: '
     echo "${groovy.json.JsonOutput.prettyPrint(deploymentMap.toString())}"
     dir(deploymentMap.buildDir) {
