@@ -1,9 +1,7 @@
-import groovy.json.JsonSlurper
-import groovy.json.JsonOutput
 def deploymentMap = null
 node {
 
-    deploymentMap = readJSON file: params.deploymentMap
+    deploymentMap = readJSON text: params.deploymentMap
     echo '\u27A1 deploymentMap: '
     echo "${groovy.json.JsonOutput.prettyPrint(deploymentMap.toString())}"
     dir(deploymentMap.buildDir) {
